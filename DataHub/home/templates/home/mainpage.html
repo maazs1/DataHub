@@ -1,0 +1,533 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Coral - Onepage portfolio Template">
+    <meta name="author" content="esrat">
+
+    <!-- Fontawseom Icon CSS -->
+    <link rel="stylesheet"  href="{% static 'home/all.css' %}">
+
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{% static 'home/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+    <link rel="stylesheet"  href="{% static 'home/responsive.css' %}">
+
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <!-- <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+      <!-- <link rel="stylesheet" type="text/css" href="{% static 'home/mainpage.css' %}"> -->
+
+
+    <title>Equstatus</title>
+</head>
+
+<body id="page-top">
+
+    <!-- NAVBAR
+    ================================================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-togglable  fixed-top " id="mainNav">
+        <div class="container">
+
+            <!-- Brand -->
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+              DataHub
+            </a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon-bar">
+                    <i class="fa fa-bars"></i>
+                </span>
+            </button>
+
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <!-- Links -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#page-top">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="#about">
+                          About
+                      </a>
+                  </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#sensors">
+                            Data Types
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#service">
+                            Market Place
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item ">
+                        <a class="nav-link js-scroll-trigger" href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item ">
+                      <a class="nav-link js-scroll-trigger" href="/login/">
+                          Login
+                      </a>
+                  </li>
+
+
+                    <li class="nav-item ">
+                      <a class="nav-link js-scroll-trigger" href="/signup/">
+                       Sign Up
+                      </a>
+                  </li> 
+
+                  <!-- <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="/login/">
+                        Login
+                    </a>
+                </li>
+
+                </ul>
+            </div>
+            <!-- / .navbar-collapse -->
+        </div>
+        <!-- / .container -->
+    </nav>
+
+    <!-- HERO
+    ================================================== -->
+    <section class="section section-top section-full">
+
+        <!-- Cover -->
+        <div class="bg-cover" style="background-image: url(static/back.jpg);"></div>
+
+        <!-- Overlay -->
+        <div class="bg-overlay"></div>
+        <!-- Content -->
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-10 col-lg-7 ">
+                    <div class="banner-content">
+
+
+                        <!-- Heading -->
+                        <h1 class="text-white text-center mb-4 display-4 font-weight-bold">
+                          DataHub
+                        </h1>
+
+                    </div>
+                </div>
+            </div>
+            <!-- / .row -->
+        </div>
+        <!-- / .container -->
+    </section>
+
+    <!-- SECTIONS
+    ================================================== -->
+    <!-- PAGES
+    ================================================== -->
+
+        <!-- ABOUT
+    ================================================== -->
+    <section class="section bg-light" id="about">
+      <div class="container">
+          <div class="row ">
+              <div class="col-lg-6">
+                  <div class="about-img">
+                      <img src="{%static 'home/images/data1.jpg' %}" alt="" class="img-fluid">
+                  </div>
+              </div>
+
+              <div class="col-lg-6 ">
+                  <div class="about-content">
+                      <h2 class="display-5">
+                          Want Free Data?!
+                      </h2>
+                      <h3>Check out the various <span style ="color:#67a6f8;"><strong>data</strong></span> that we offer</h3>
+
+                      <p>Have any query? <a href="">Contact Us Now</a></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+          <div class="row mt-5 align-items-center ">
+              <div class="col-lg-6 col-md-6">
+                  <div class="about-content-2 ">
+                      <h2 class="display-5">
+                        Want to share your data with the rest of the <span style ="color:#67a6f8;"><strong>World?</strong></span>
+                      </h2>
+                      <p>Feel free to create a porifle and upload your data to the Data Market Place!</p>
+                  </div>
+              </div>
+
+              <div class="col-lg-6 col-md-6">
+                  <div class="about-img">
+                      <img src="{%static 'home/images/data2.jpg' %}" alt="" class="img-fluid">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="section" id="analysis">
+      <div class="align-items-center" id="framewrap">
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-8 col-lg-6 text-center">
+            <img id ="loader1" src="{%static 'home/images/loading.gif' %}">
+          </div>
+        </div>
+        <iframe id="iframe1" src="http://15.223.77.238:8080/dashboard/db9ecd70-1df6-11eb-99cd-d5c255bc7dba?publicId=092eed10-1df7-11eb-99cd-d5c255bc7dba" name="iframe_a" padding="20px" height="800px" width="100%" title="EquStatus Viberational Analysics Dashboard" scrolling="no" ></iframe>
+      </div>
+
+      <script>
+        document.getElementById('iframe1').style.display = "none";
+        window.onload = function(){
+           document.getElementById('loader1').style.display = "none";
+           document.getElementById('iframe1').style.display = "block";
+        }        
+        
+      </script>
+
+      <!-- <script>
+        $(document).ready(function () {
+            $('#iframe1').on('load', function () {
+                $('#loader1').hide();
+            });
+        });
+      </script> -->
+
+    </div>
+  </section>
+
+    <!-- SENSORS
+    ================================================== -->
+    <section class="section bg-light" id="sensors">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8 col-lg-6 text-center">
+
+                    <!-- Heading -->
+                    <h2 class="lg-title mb-2">
+                      Types of Data we Offer 
+                    </h2>
+
+
+                </div>
+            </div>
+            <!-- / .row -->
+
+            <div class="row justy-content-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center feature-block">
+                        <div class="feature-icon-block mb-4">
+                            <i class="lnr lnr-cloud img-small"></i>
+                        </div>
+                        <h4 class="mb-3 ">Climate Data</h4>
+                      </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center feature-block">
+                        <div class="feature-icon-block mb-4">
+                            <i class="lnr lnr-chart-bars"></i>
+                        </div>
+                        <h4 class="mb-3">Stock Market Data</h4>
+                      </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center feature-block">
+                        <div class="feature-icon-block mb-4">
+                            <i class="lnr lnr-car"></i>
+                        </div>
+                        <h4 class="mb-3">Transportation Data</h4>
+                      </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="text-center feature-block">
+                        <div class="feature-icon-block mb-4">
+                            <i class="lnr lnr-heart-pulse img-small"></i>
+                        </div>
+                        <h4 class="mb-3">Health Care Data</h4>
+                      </div>
+                </div>
+            </div>
+          
+            <div class="row justy-content-center">
+              <div class="col-lg-3 col-md-6">
+                  <div class="text-center feature-block">
+                      <div class="feature-icon-block mb-4">
+                          <i class="lnr lnr-apartment img-smalll"></i>
+                      </div>
+                      <h4 class="mb-3 ">Company Data</h4>
+                    </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                  <div class="text-center feature-block">
+                      <div class="feature-icon-block mb-4">
+                          <i class="lnr lnr-music-note img-small"></i>
+                      </div>
+                      <h4 class="mb-3">Song Chart Data</h4>
+                    </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                  <div class="text-center feature-block">
+                      <div class="feature-icon-block mb-4">
+                          <i class="lnr lnr-cog img-small"></i>
+                      </div>
+                      <h4 class="mb-3">Machine Data</h4>
+                    </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                <div class="text-center feature-block">
+                    <div class="feature-icon-block mb-4">
+                        <i class="lnr lnr-store img-small"></i>
+                    </div>
+                    <h4 class="mb-3">Inventory Data</h4>
+                  </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- / .container -->
+    </section>
+
+    <!-- SERVICES
+    ================================================== -->
+    <section class="section" style="background-color: #40607E;" id="service">
+        <!-- Content -->
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8 col-lg-7 text-center">
+
+                    <!-- Heading -->
+                    <h2 style="color:white;" class="lg-title mb-2">
+                        Data Market Place
+                    </h2>
+
+                    <!-- Subheading -->
+                    <p style="color:white;" class="mb-5">
+                        View and Download Data for Free!
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="container-fluid text-center">
+              <div class="row mb-4 justify-content-center stuffContainer">
+                <!-- <div class="col-lg-4 col-md-6 col-sm-6 mb-5"> -->
+
+                  {% for obj in object_list %}
+                  <div class="col-lg-4 col-md-6 col-sm-6 padd">
+
+                    <div class="card" style="width: 14rem;">
+                      <img src="{{obj.avatar.url}}" class="card-img-size" style="height: 13rem;">
+                      <div style="background-color: silver; height: 6rem;">
+                        <h4 class="card-title">{{obj.user}}</h4>
+                        <a href = {{obj.get_absolute_url}}><button class="btn btn-primary">See More</button></a>
+                      </div>
+                    </div>
+
+                  </div>
+                  {% endfor %}
+                <!-- </div> -->
+              </div>
+            </div>
+        </div>
+    </section>
+
+  
+
+   
+
+   
+
+
+    <!-- Contact
+    ================================================== -->
+    <section class="section" style="background-color: #40607E;" id="contact">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8 col-lg-8 text-center">
+
+                    <!-- Heading -->
+                    <h2 class="lg-title mb-2" style="color:white;">
+                        Have any questions on mind?
+                    </h2>
+
+                    <!-- Subheading -->
+                    <p class="mb-5" style="color:white;">
+                        Our duty towards you is to share our experience we're reaching in our work path with you.
+                    </p>
+
+                </div>
+            </div>
+            <!-- / .row -->
+
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- <form action="mail.php" method="post" id="main_contact_form" class="contact__form"></form> -->
+                    <!-- <form method="post" id="main_contact_form" class="contact__form"> -->
+                      {% csrf_token %}
+
+                        <!-- form message -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="alert alert-success contact__msg" style="display: none" role="alert">
+                                        Your message was sent successfully.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end message -->
+                            
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter your Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="text" name="email" id="email" class="form-control" placeholder="Enter your Email *" required="required">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input type="text" name="subject" id="subject" class="form-control" placeholder="Enter your Subject *" required="required">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <textarea name="message" id="message" cols="30" rows="6" class="form-control" placeholder="Enter your Message" required="required" ></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="submit text-center">
+                                    <input name="submit" type="submit" class="btn btn-primary btn-lg" value="Submit Now">
+                                    <p class="pt-3" style="color:white;">* We will not spam on you inbox.</p>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER
+    ================================================== -->
+    <footer class="top-padding bg-dark">
+
+      <div class="container">
+    
+      </div>
+      <br>
+        <!--Content -->
+        <div class="container">
+            <div class="row align-self-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-widget">
+                        <!-- Brand -->
+                        <a href="#" class="footer-brand text-white">
+                            Equstatus
+                        </a>
+                        <!-- <p>In expedita sapiente cumque enim dicta similique, animi adipisci quia et quo quod numquam, veniam eligendi reprehenderit .</p> -->
+                    </div>
+                </div>
+
+                <div class="col-lg-2 ml-lg-auto col-md-2">
+
+                    <!-- Links -->
+                    <ul class="footer-link list-unstyled ml-0 justify-content-end">
+                        <li>
+                            <!-- <a href="#" class="text-white">
+                                Services
+                            </a> -->
+                        </li>
+                        <li>
+                            <a href="#" class="text-white">
+                                Location
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-white">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+
+                    <!-- Links -->
+                    <ul class="footer-link list-unstyled ml-0 justify-content-end">
+                        <!-- <li>
+                            <i class="fa fa-mobile"></i> 
+                        </li> -->
+                        <li>
+                            <i class="fa fa-location-arrow"></i> 4407 68 Ave Emonton 
+                        </li>
+                        <li>
+                            <i class="fa fa-globe"></i> support@Fourien.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- / .row -->
+
+            <div class="row justify-content-md-center footer-copy">
+                <div class="col-lg-8 col-md-6 col-sm-6 text-center">
+                    <p class="lead text-white-50">&copy; Copyright Reserved to Fourien Inc.</p>
+                </div>
+            </div>
+        </div>
+        <!-- / .container -->
+    </footer>
+
+    <!-- JAVASCRIPT
+    ================================================== -->
+    <!-- Global JS -->
+    <script type="text/javascript" src="{% static 'home/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'home/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+
+
+    <!-- Plugin JavaScript -->
+
+    <script type="text/javascript" src="{% static 'home/jquery.easing.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'home/ajax-contact.js' %}"></script>
+
+    <!-- Theme JS -->
+    <script type="text/javascript" src="{% static 'home/theme.js' %}"></script>
+
+
+</body>
+
+</html>

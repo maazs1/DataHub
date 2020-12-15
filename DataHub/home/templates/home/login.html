@@ -1,0 +1,28 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+  
+    <script>
+      alert("{{ message }}");
+    </script>
+  
+    {% endfor %}
+    {% endif %}
+
+     <form method="post">
+        {% csrf_token %}
+        
+        {{ form }}
+        
+        <center>
+          <button style="background: rgb(6, 127, 226); color: aliceblue;" class="btn btn-outline-info" type="submit"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+        </center>
+        <br/>
+     </form>
+</body>
