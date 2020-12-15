@@ -43,7 +43,7 @@ class Profile(models.Model):
     #     return self.followers.all().count()
 
     def get_absolute_url(self):
-        return reverse("homepage:profile-detail-view", kwargs={"slug": self.slug})
+        return reverse("home:profile-detail-view", kwargs={"slug": self.slug})
 
     __initial_first_name = None
     __initial_last_name = None
