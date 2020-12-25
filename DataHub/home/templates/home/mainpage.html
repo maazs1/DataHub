@@ -83,24 +83,34 @@
                         </a>
                     </li>
 
-                    <li class="nav-item ">
-                      <a class="nav-link js-scroll-trigger" href="/login/">
-                          Login
-                      </a>
-                  </li>
+                    {% if user.is_authenticated %}
 
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="/myprofile/">
+                                My Account
+                            </a>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="/logout/">
+                                Logout
+                            </a>
+                        </li>
 
-                    <li class="nav-item ">
-                      <a class="nav-link js-scroll-trigger" href="/signup/">
-                       Sign Up
-                      </a>
-                  </li> 
+                    {% else %}
 
-                  <!-- <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/login/">
-                        Login
-                    </a>
-                </li>
+                        <li class="nav-item ">
+                            <a class="nav-link js-scroll-trigger" href="/signup/">
+                            Sign Up
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link js-scroll-trigger" href="/login/">
+                                Login
+                            </a>
+                        </li>
+                    
+                    {% endif %}
 
                 </ul>
             </div>
@@ -494,7 +504,7 @@
                             <i class="fa fa-location-arrow"></i> Edmonton
                         </li>
                         <li>
-                            <i class="fa fa-globe"></i> support@Maaz.com
+                            <i class="fa fa-globe"></i> support@DataHub.com
                         </li>
                     </ul>
                 </div>
@@ -502,7 +512,7 @@
             <!-- / .row -->
 
             <div class="row justify-content-md-center footer-copy">
-                <div class="col-lg-8 col-md-6 col-sm-6 text-center">
+                <div class="col-lg-8 col-md-6 col-sm-6 text-center">scd
                     <p class="lead text-white-50">&copy; Copyright Reserved to Fourien Inc.</p>
                 </div>
             </div>

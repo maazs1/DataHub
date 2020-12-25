@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.ProfileListView.as_view(), name = 'all-profiles-view'),
     path('signup/', views.signup_view, name = 'signup'),
     path('login/', views.login_view, name = 'login'),
+    path('logout/', views.logout_view, name = 'user_logout'),
     path('myprofile/', views.my_profile_view, name = 'my-profile'),
     path('<slug>/', views.ProfileDetailView.as_view(), name='profile-detail-view'),
 ]

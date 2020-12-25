@@ -19,7 +19,7 @@ class Profile(models.Model):
     description = models.TextField(max_length=500, blank=False)
     email = models.EmailField(max_length=200, blank=False)
     country = models.EmailField(max_length=200, blank=True)
-    avatar = models.ImageField(default='avatarT.png', upload_to='avatars/')
+    avatar = models.ImageField(default='avatar.webp', upload_to='images/')
     slug = models.SlugField(unique=True, blank=True)
     link = models.TextField(blank=False)
 

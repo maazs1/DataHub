@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
-from django.contrib.auth.forms import AuthenticationForm 
 from django.contrib import messages 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -13,6 +12,8 @@ from .models import Profile, ProfileManager
 from django.views.generic import ListView, DetailView
 from django.db.models import Q
 from django.core.exceptions import *
+from .forms import UserForm, UserProfileInfoForm
+from django.urls import reverse
 # from django.shortcuts import render, redirect, get_object_or_404
 
 
@@ -21,35 +22,69 @@ from django.core.exceptions import *
 #     return render(request, "home/mainpage.html", {})
 
 def signup_view(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect("http://dailysensors.com/")
+    registered = False
+    if request.method=='POST':
+        user_form = UserForm(data=request.POST)
+        profile_form = UserProfileInfoForm(data=request.POST)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save()
+            user.set_password(user.password)
+            user.save()
+
+            profile = profile_form.save(commit=False)
+            profile.user = user
+
+            if 'avatar' in request.FILES:
+                profile.avatar=request.FILES['avatar']
+            profile.save()
+
+            registered = True
+
+            return HttpResponseRedirect('/login')
+        else:
+            print(user_form.errors,profile_form.errors)
+
     else:
-        form = UserCreationForm()
-    return render(request, 'home/signup.html', {'form': form})
+        user_form = UserForm()
+        profile_form = UserProfileInfoForm()
+
+    return render(request,'home/signup.html',
+                          {'user_form':user_form,
+                           'profile_form':profile_form,
+                           'registered':registered})
 
 
 def login_view(request):
-    print(request.method)
+    # valuenext= request.POST.get()
+    # print(valuenext )
     if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user:
+            if user.is_active:
+                login(request,user)
+                if 'next' in request.POST:
+                    return HttpResponseRedirect(request.POST.get('next'))
+                return HttpResponseRedirect('/')
+            else:
+                return HttpResponse("Your account was inactive.")
+        else:
+            print("Someone tried to login and failed.")
+            print("They used username: {} and password: {}".format(username,password))
+            return HttpResponse("Invalid login details given")
+    else:
 
-        username = request.POST['username']
-        password = request.POST['password']
-
-        user = authenticate(request, username = username, password = password) 
-        if user is not None: 
-            form = login(request, user)
-            return HttpResponseRedirect("http://dailysensors.com/")
-        else: 
-            messages.info(request, 'Account does not exist. Please try again')
-    form = AuthenticationForm()
-    return render(request, 'home/login.html', {'form': form})
+        return render(request, 'home/login.html', {})
 
 
 
 # Create your views here.
+@login_required
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')
 
 @login_required
 def my_profile_view(request):
@@ -66,6 +101,7 @@ def my_profile_view(request):
 #         account_id = request.POST.get('account_id')
 #         profile_obj = Profile.objects.get(id=account_id)
 #         profile_obj.liked.add("Like")
+
 def profiles_list(request):
     profiles =Profile.objects.get_all_profiles()
     context = {
@@ -74,7 +110,7 @@ def profiles_list(request):
 
     return render(request, 'home/profiles_list.html', context)
 
-class ProfileDetailView(DetailView):
+class ProfileDetailView(LoginRequiredMixin, DetailView):
     model= Profile
     template_name = 'home/detail.html'
 
@@ -97,8 +133,8 @@ class ProfileDetailView(DetailView):
             profile = Profile.objects.get(user=user)
         except ObjectDoesNotExist:
             print('Data Not Found')
-        finally:
-            return context
+       
+        return context
 
 class ProfileListView(ListView):
     model = Profile
@@ -112,5 +148,5 @@ class ProfileListView(ListView):
             profile = Profile.objects.get(user=user)
         except ObjectDoesNotExist:
             print('Data Not Found')
-        finally:
-            return context
+        
+        return context
